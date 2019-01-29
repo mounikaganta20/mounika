@@ -13,7 +13,7 @@ echo $_SESSION['username'];
 session_destroy();
 
 
-
+echo "welcome";
 
 
 
