@@ -18,6 +18,16 @@ if(!isset($_SESSION['uname'])){
 
 }
 
+
+$now=time();
+
+if($now>$_SESSION['expire'])
+{
+     session_destroy();
+    header('Location: index.html');
+}
+
+   
 // logout
 if(isset($_POST['but_logout'])){
     session_destroy();
@@ -31,6 +41,7 @@ if(isset($_POST['but_logout'])){
         <h1>Welcome to Homepage</h1>
         <?php
         echo  "Hi ".$_SESSION['uname'];
+       
        
         ?>
 
